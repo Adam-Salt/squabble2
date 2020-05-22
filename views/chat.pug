@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  h1.fruitbowl-header fruitbowl
+  img.page-logo.margin-bottom(src=randomIcon)
+  if user
+    .user-dock
+      span Logged in as: 
+      span#socket-user.chat-profile-name= user.username
+      a.button.button--primary.font-sm(href='/profile') Profile
+      a.button.button--secondary.font-sm(href='/logout') Logout
+  .chatroom
+    .chatroom__header Chatroom
+    .chatroom__info
+      .display-block
+        span= "Users online: "
+        strong#user-count 0
+      #chatroom-users.chatroom__info__users
+    ul.chatroom__feed.chatroom--inset
+    if user
+      form.chatroom__form#chatroom-form(action='/chat/send' method='post')
+        input.chatroom__form__input
+        .chatroom__form__submit(title="Send")
+          i.fas.fa-paper-plane.button--effect(onclick="document.getElementById('form-submit').click()")
+        input#form-submit(type='submit' hidden)
+  script(type="text/javascript" src="socket.js")

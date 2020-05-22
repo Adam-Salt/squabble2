@@ -1,0 +1,28 @@
+extends layout
+
+block content
+  img.page-logo(src='https://cdn.glitch.com/9e24a3f0-3807-455d-af3b-8b70ccd9ef9e%2Fberries.svg?1554330220566')
+  h1.profile-header= profile.username
+  .avatar-icon.avatar-icon--xl
+    img(src=avatar)
+  .user-stats
+    h2 Profile
+    .user-stats__entry
+      strong Favorite fruit:
+      span= profile.favorite_fruit
+    .user-stats__entry
+      strong Messages sent: 
+      span= profile.messages_sent
+    .user-stats__entry
+      strong Last login: 
+      span= profile.last_login.toDateString()
+  .links
+    if user
+      if user.username != profile.username
+        a.button.button--primary(href='/profile') View my profile
+      a.button.button--primary(href='/chat') Enter chatroom 
+      if user.username = profile.username
+        a.button.button--secondary(href='/logout') Logout
+    else
+      a.button.button--secondary(href='/') Login / Register
+    

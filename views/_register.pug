@@ -1,0 +1,32 @@
+.forms-box
+  form(id='register' action='/register' method='post')
+    .form-row
+      .form-header Register
+    .form-row
+      input(name='username' type='text' placeholder='username' pattern='^[^ ]+$' required)
+    .form-row
+      input(name='password' type='password' placeholder='password' required)
+    .form-row
+      select(name='fruit' required)
+        option(value='' disabled selected) choose a fruit
+        option(value='apple') apple
+        option(value='grapes') grapes
+        option(value='lemon') lemon
+        option(value='mango') mango
+        option(value='orange') orange
+        option(value='pear') pear
+        option(value='pineapple') pineapple
+        option(value='pomegranate') pomegranate
+        option(value='strawberry') strawberry
+        option(value='watermelon') watermelon
+    .form-row
+      input.button.button--secondary(type='submit' value='Register')
+  form(id='login' action='/login' method='post')
+    .form-row
+      .form-header Login
+    .form-row
+      input(name='username' type='text' placeholder='username' required)
+    .form-row
+      input(name='password' type='password' placeholder='password' required)
+    .form-row
+      input.button.button--secondary(type='submit' value='Login')
