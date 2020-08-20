@@ -9,7 +9,7 @@
   "author": "mcli830",
   "license": "MIT",
   "dependencies": {
-    "bcrypt": "^3.0.5",
+    "bcrypt": "^5.0.0",
     "cookie-parser": "^1.4.4",
     "dotenv": "^7.0.0",
     "express": "^4.16.4",
